@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { Sidebar } from "./components/sidebar/Sidebar";
+import { BrowserRouter, Route } from "react-router-dom";
+import { TopNav } from "./components/topnav/TopNav";
+import "./App.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { ThemeAction } from "./redux/actions/ThemeAction";
+import { Routes } from "./Routes";
 
 function App() {
+  const dispatch = useDispatch();
+  const themeReducer = useSelector((state) => state.ThemeReducer);
+
+  useEffect(() => {
+    const themeClass = localStorage.getItem("themeMode");
+    const colorClass = localStorage.getItem("colorMode");
+
+    if (themeClass) dispatch(ThemeAction.setMode(themeClass));
+    if (colorClass) dispatch(ThemeAction.setMode(colorClass));
+  }, [dispatch]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Route
+        render={(props) => (
+          <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
+            <Sidebar {...props} />
+            <div className="layout__content">
+              <TopNav />
+              <div className="layout__content-main">
+                <Routes />
+              </div>
+            </div>
+          </div>
+        )}
+      />
+    </BrowserRouter>
   );
 }
 

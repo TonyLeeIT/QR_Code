@@ -1,0 +1,102 @@
+.form__box {
+  width: 100%;
+  height: 550px;
+  position: relative;
+  margin: 6% auto;
+  background: transparent;
+  padding: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  border-radius: 5%;
+}
+
+.form__box__wrapper {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__box {
+  width: 350px;
+  height: 40px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: var(--box-shadow);
+  border-radius: 30px;
+}
+
+.toggle__btn {
+  width: 50%;
+  padding: 12px 30px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  position: relative;
+}
+
+.switch__toggle {
+  top: 0;
+  left: 0px;
+  position: absolute;
+  width: 175px;
+  height: 100%;
+  background: var(--main-color);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.switch__toggle.active {
+  left: 175px;
+}
+
+.qr__form__header {
+  display: flex;
+  height: 80px;
+
+  font-size: 0.5rem;
+  font-weight: 600;
+}
+
+.qr__form__header.dynamic {
+  margin: 20px 2px;
+}
+
+.qr__form__header.static {
+  margin: 0;
+}
+
+.qr__form__header > img {
+  height: 100%;
+  width: 180px;
+}
+
+.qr__scan {
+  margin: 0px auto;
+  text-align: center;
+  font-weight: 600;
+}
+
+.qr__form__footer {
+  display: flex;
+  height: 80px;
+  width: 180px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qr__form__footer > img {
+  height: 70%;
+}
+
+.napas {
+  width: 80px;
+  margin-right: 5px;
+}
+
+.kebhana {
+  width: 60px;
+}

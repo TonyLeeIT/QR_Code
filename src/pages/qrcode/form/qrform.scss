@@ -1,0 +1,70 @@
+.input__group {
+  top: 130px;
+  width: 350px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.input__field {
+  width: 100%;
+  padding: 10px;
+  padding-left: 6px;
+  margin: 5px;
+  border-left: 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #999;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+}
+
+.input__field.error {
+  border: 0.5px solid #ed99a1;
+}
+
+.required {
+  position: absolute;
+  border: 0.5px solid #ed99a1;
+  color: #ed99a1;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  right: 10px;
+}
+.measure {
+  position: absolute;
+  text-align: center;
+  font-size: 0.7rem;
+  right: 10px;
+}
+
+.submit__btn {
+  width: 350px;
+  padding: 10px 30px;
+  cursor: pointer;
+  display: block;
+  margin: 150px auto;
+  background: var(--main-color);
+  border: 0;
+  outline: none;
+  border-radius: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+.submit__btn.error {
+  margin: 110px auto;
+}
+
+.feedback {
+  margin-top: 5px;
+  color: #ed99a1;
+  font-size: 0.8rem;
+  padding-left: 6px;
+}

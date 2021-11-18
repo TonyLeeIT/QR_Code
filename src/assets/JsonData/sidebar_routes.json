@@ -1,0 +1,12 @@
+[
+  {
+    "display_name": "Dynamic QR",
+    "route": "/dynamic/qr-code",
+    "icon": "bx bx-category"
+  },
+  {
+    "display_name": "Static QR",
+    "route": "/static/qr-code",
+    "icon": "bx bx-category"
+  }
+]
