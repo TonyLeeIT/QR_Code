@@ -9,10 +9,12 @@ export const Sidebar = (props) => {
   const activeItem = sidebar_items.findIndex(
     (item) => item.route === props.location.pathname
   );
-
+  const handleClick = () => {
+    props.history.push("/");
+  };
   return (
     <div className="sidebar">
-      <div className="sidebar__logo">
+      <div className="sidebar__logo" onClick={handleClick}>
         <img src={logo} alt="company logo" />
       </div>
       {sidebar_items.map((item, index) => (

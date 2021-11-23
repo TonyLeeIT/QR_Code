@@ -109,8 +109,8 @@ export const TrackingQR = () => {
             style={{ fontSize: "1rem" }}
             placeholder="Choose a date"
             onChange={setStartDate}
-            isMultiSelection={false}
             format="yyyy-MM-dd"
+            cssClass="e-custom-style"
           />
         </form>
       </div>
