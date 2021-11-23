@@ -8,5 +8,10 @@
     "display_name": "Static QR",
     "route": "/static/qr-code",
     "icon": "bx bx-category"
+  },
+  {
+    "display_name": "Tracking QR",
+    "route": "/tracking-qr",
+    "icon": "bx bx-movie"
   }
 ]

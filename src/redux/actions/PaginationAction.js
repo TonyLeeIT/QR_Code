@@ -11,6 +11,13 @@ const prevPage = (page) => {
   };
 };
 
+const getPage = (page) => {
+  return {
+    type: "GET_PAGE",
+    payload: page,
+  };
+};
+
 const searhPage = (searchKeyWord) => {
   return {
     type: "SEARCH_PAGE",
@@ -21,5 +28,6 @@ const searhPage = (searchKeyWord) => {
 export const PaginationAction = {
   nextPage,
   prevPage,
+  getPage,
   searhPage,
 };

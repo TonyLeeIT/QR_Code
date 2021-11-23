@@ -64,6 +64,7 @@ export const TopNav = () => {
     <div className="topnav">
       <div className="topnav__search">
         <input ref={searchRef} type="text" placeholder="Search here..." />
+
         <i
           className="bx bx-search"
           onClick={() => onHandleSearch(searchRef)}

@@ -9,6 +9,7 @@ import "./assets/boxicons-2.0.7/css/boxicons.min.css";
 import { Provider } from "react-redux";
 import { store } from "./redux/store/index";
 
+
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

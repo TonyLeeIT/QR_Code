@@ -6,32 +6,60 @@ import "./pagination.scss";
 export const Pagination = (props) => {
   const { page } = props;
   const dispatch = useDispatch();
-  // const totaPages = Math.ceil(last_page / per_page);
   const nextPage = () => {
-    dispatch(PaginationAction.nextPage(page.current_page));
+    dispatch(PaginationAction.nextPage(page.number));
   };
 
   const prevPage = () => {
-    dispatch(PaginationAction.prevPage(page.current_page));
+    dispatch(PaginationAction.prevPage(page.number));
   };
 
   return (
-    <div>
+    <div className="table__pagination">
       <button
-        style={{ marginRight: "20px" }}
-        // disabled={page <= 1}
+        className="table__pagination__button"
+        disabled={page.number <= 0}
         onClick={() => prevPage()}
       >
-        Prev
+        {"<<<"}
       </button>
       <button
-        // disabled={page >= totalPages}
+        className="table__pagination__button"
+        onClick={() => dispatch(PaginationAction.getPage(0))}
+      >
+        1
+      </button>
+      {page.totalPages >= 2 && (
+        <button
+          className="table__pagination__button"
+          onClick={() => dispatch(PaginationAction.getPage(1))}
+        >
+          2
+        </button>
+      )}
+      {page.totalPages > 3 && (
+        <button className="table__pagination__button">...</button>
+      )}
+      {page.totalPages > 2 && (
+        <button
+          className="table__pagination__button"
+          onClick={() =>
+            dispatch(PaginationAction.getPage(page.totalPages - 1))
+          }
+        >
+          {page.totalPages}
+        </button>
+      )}
+      <button
+        className="table__pagination__button"
+        disabled={page.number > page.totalPages - 2}
         onClick={() => nextPage()}
       >
-        Next
+        {">>>"}
       </button>
-      <span> Current Page : {page.current_page} </span>
-      <span> Last Page : {page.last_page} </span>
+      <span style={{ marginLeft: "50px" }}>
+        page : {page.number + 1} of total pages : {page.totalPages}
+      </span>
     </div>
   );
 };
