@@ -1,11 +1,3 @@
-.table__pagination {
-  display: flex;
-  margin-top: 20px;
-  justify-content: flex-end;
-  width: 100%;
-  align-items: center;
-}
-
 .table__pagination-item ~ .table__pagination-item {
   margin-left: 10px;
 }

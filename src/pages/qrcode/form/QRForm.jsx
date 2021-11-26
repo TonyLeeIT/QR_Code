@@ -7,6 +7,7 @@ import { FormFeedback } from "reactstrap";
 import Select from "react-select";
 import { QR } from "../../../constant/QRCode";
 import NumberFormat from "react-number-format";
+import { Server } from "../../../constant/Server";
 
 const validationSchema = yup.object().shape({
   amount: yup
@@ -71,7 +72,7 @@ export const QRForm = (props) => {
 
           const res = await axios({
             method: "put",
-            url: "http://localhost:8080/qr/generate",
+            url: `http://localhost:${Server.PORT}/qr/generate`,
             headers: {},
             data: {
               header: {

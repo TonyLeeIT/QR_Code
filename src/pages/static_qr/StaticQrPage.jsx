@@ -5,6 +5,7 @@ import axios from "axios";
 import VietQR from "../../constant/VietQR.jpg";
 import napas247 from "../../constant/napas247.jpg";
 import kebhana from "../../constant/kebhana.jpg";
+import { Server } from "../../constant/Server";
 
 export const StaticQrPage = () => {
   const [isActive, setIsActive] = useState(true);
@@ -35,7 +36,7 @@ export const StaticQrPage = () => {
         }
         const res = await axios({
           method: "put",
-          url: "http://localhost:8080/qr/generate",
+          url: `http://localhost:${Server.PORT}/qr/generate`,
           headers: {},
           data: {
             header: {
@@ -83,9 +84,9 @@ export const StaticQrPage = () => {
           </div>
           <QRCode value={qrCode} size={QR.QRSize} />
           <div className="qr__form__footer">
-              <img className="napas" src={napas247} alt="Napas logo" />
-              <img className="kebhana" src={kebhana} alt="han logo" />
-            </div>
+            <img className="napas" src={napas247} alt="Napas logo" />
+            <img className="kebhana" src={kebhana} alt="han logo" />
+          </div>
           <div className="qr__scan">
             <div>Beneficiary Name : {QR.CardHolder}</div>
             {type === "Account Number" && (

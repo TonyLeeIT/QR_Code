@@ -6,6 +6,7 @@ import { Table } from "../../components/table/Table";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 import { PaginationAction } from "../../redux/actions/PaginationAction";
 import "./trackinglog.scss";
+import { Server } from "../../constant/Server";
 
 const customerTableHead = [
   "Id",
@@ -48,7 +49,7 @@ export const TrackingQR = () => {
 
         const response = await axios({
           method: "put",
-          url: `http://localhost:8080/qr/tracking-qr?${paramString}`,
+          url: `http://localhost:${Server.PORT}/qr/tracking-qr?${paramString}`,
           headers: {},
           data: {
             page: paginationReducer.page,
@@ -110,7 +111,6 @@ export const TrackingQR = () => {
             placeholder="Choose a date"
             onChange={setStartDate}
             format="yyyy-MM-dd"
-            cssClass="e-custom-style"
           />
         </form>
       </div>

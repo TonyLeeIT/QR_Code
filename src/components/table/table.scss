@@ -48,3 +48,11 @@ tbody > tr:hover {
   background-color: var(--main-color);
   color: var(--txt-white);
 }
+
+.table__pagination {
+  display: flex;
+  margin-top: 20px;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
