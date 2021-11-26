@@ -36,7 +36,7 @@ export const StaticQrPage = () => {
         }
         const res = await axios({
           method: "put",
-          url: `http://localhost:${Server.PORT}/qr/generate`,
+          url: `http://${Server.HOST}:${Server.PORT}/qr/generate`,
           headers: {},
           data: {
             header: {

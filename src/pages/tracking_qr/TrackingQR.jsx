@@ -49,7 +49,7 @@ export const TrackingQR = () => {
 
         const response = await axios({
           method: "put",
-          url: `http://localhost:${Server.PORT}/qr/tracking-qr?${paramString}`,
+          url: `http://${Server.HOST}:${Server.PORT}/qr/tracking-qr?${paramString}`,
           headers: {},
           data: {
             page: paginationReducer.page,
